@@ -9,3 +9,40 @@ The goal is to create a visual representation of network communication, includin
 - Ports and protocols
 - Communication direction
 - Network traffic between hosts
+
+## Development
+
+Create and activate a virtual environment:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+```
+Install the project in editable mode:
+`python -m pip install -e .`
+
+Run the application:
+`python -m pcap_visualizer.main`
+
+## TODOs:
+
+- [x] IPv4
+    - [x] TCP
+    - [x] UDP
+- [x] IPv6
+    - [x] TCP
+    - [x] UDP
+- [ ] ARP
+- [ ] ICMP
+- [ ] ICMPv6
+- [ ] DNS
+- [ ] Pass files as arguments
+
+
+## Ideas
+
+- Visualize all IP addresses as nodes with connections between them
+- Show connection count / traffic size as weighted arrows
+- Show packet transmission in chronological order with animation (similar to Packet Tracer's Simulation Mode)
+- Renaming of nodes
+- Interactive node movement

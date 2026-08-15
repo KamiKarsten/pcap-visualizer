@@ -1,8 +1,16 @@
+# virt env
 .venv/
-__pycache__/
-*.pyc
 
-# PCAP captures
+# cache
+__pycache__/
+*.py[cod]
+
+
+# artifacts
+*.egg-info/
+build/
+dist/
+
 *.pcap
 *.pcapng
 
