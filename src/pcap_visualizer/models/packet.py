@@ -5,8 +5,8 @@ from .protocols import Protocol
 @dataclass
 class PacketInfo:
 	source_ip: str | None
-	source_mac: str | None
 	source_port: int | None
+	source_mac: str | None
 	destination_ip: str | None
 	destination_port: int | None
 	destination_mac: str | None
