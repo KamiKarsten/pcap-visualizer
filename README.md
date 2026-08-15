@@ -25,18 +25,20 @@ Run the application:
 `python -m pcap_visualizer.main`
 
 ## TODOs:
+**The TODOs section will be removed.**
+All pending tasks and improvements are now tracked and managed through GitHub Issues.
 
+Parsing: 
 - [x] IPv4
     - [x] TCP
     - [x] UDP
 - [x] IPv6
     - [x] TCP
     - [x] UDP
-- [ ] ARP
-- [ ] ICMP
-- [ ] ICMPv6
+- [x] ARP
+- [x] ICMP
+- [(x)] ICMPv6
 - [ ] DNS
-- [ ] Pass files as arguments
 
 
 ## Ideas

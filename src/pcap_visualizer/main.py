@@ -5,8 +5,8 @@ def main():
 	filename = 'captures/example.pcap'
 	
 	for packet in read_pcap(filename):
-		package_info = parse_packet(packet)
-		print(package_info)
+		packet_info = parse_packet(packet)
+		print(packet_info)
 
 if __name__ == "__main__":
 	main()
