@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from enum import IntEnum
 
 class ICMPType(IntEnum):
-	DESTINTATION_UNREACHABLE = 3
+	DESTINATION_UNREACHABLE = 3
 	ECHO_REQUEST = 8
 	ECHO_REPLY = 0
 
