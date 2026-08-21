@@ -1,6 +1,6 @@
 from scapy.layers.inet import ICMP as ScapyICMP
 
-from pcap_visualizer.models.layers.network.icmp import ICMP, ICMPType
+from pcap_visualizer.models import ICMP, ICMPType
 
 class ICMPParser:
 	@staticmethod

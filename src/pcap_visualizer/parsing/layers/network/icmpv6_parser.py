@@ -9,7 +9,7 @@ from scapy.layers.inet6 import (
 	ICMPv6ND_NA,
 			
 )
-from pcap_visualizer.models.layers.network.icmpv6 import (
+from pcap_visualizer.models import (
 	ICMPv6, 
 	ICMPv6Type
 )

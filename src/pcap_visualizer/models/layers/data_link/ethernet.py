@@ -1,13 +1,15 @@
 from dataclasses import dataclass
 from enum import IntEnum
 
+from pcap_visualizer.models import Layer
+
 class EthernetType(IntEnum):
 	IPV4 = 0x0800
 	ARP = 0x0806
 	IPV6 = 0x086DD
 
 @dataclass()
-class Ethernet:
+class Ethernet(Layer):
 	source_mac: str
 	destination_mac: str
 	ether_type: EthernetType

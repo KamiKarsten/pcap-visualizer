@@ -1,6 +1,6 @@
 from scapy.layers.inet import TCP as ScapyTcp
 
-from pcap_visualizer.models.layers.transport.tcp import TCP, TCPFlags
+from pcap_visualizer.models import TCP, TCPFlags
 
 class TCPParser:
 	@staticmethod

@@ -1,5 +1,5 @@
 from scapy.layers.inet import UDP as ScapyUdp
-from pcap_visualizer.models.layers.transport.udp import UDP
+from pcap_visualizer.models import UDP
 
 class UDPParser:
 	@staticmethod

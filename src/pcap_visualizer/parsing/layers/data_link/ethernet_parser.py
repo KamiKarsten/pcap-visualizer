@@ -1,6 +1,6 @@
 from scapy.layers.l2 import Ether as ScapyEther
 
-from pcap_visualizer.models.layers.data_link.ethernet import Ethernet, EthernetType
+from pcap_visualizer.models import Ethernet, EthernetType
 
 class EthernetParser: 
 	@staticmethod

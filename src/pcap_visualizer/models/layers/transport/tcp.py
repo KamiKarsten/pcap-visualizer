@@ -1,6 +1,8 @@
 from dataclasses import dataclass
 from enum import IntFlag
 
+from pcap_visualizer.models import Layer
+
 class TCPFlags(IntFlag):
 	FIN = 1 << 0
 	SYN = 1 << 1
@@ -13,7 +15,7 @@ class TCPFlags(IntFlag):
 	NS = 1 << 8
 
 @dataclass()
-class TCP():
+class TCP(Layer):
 	source_port: int
 	destination_port: int
 	sequence_number: int

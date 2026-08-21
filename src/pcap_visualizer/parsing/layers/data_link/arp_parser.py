@@ -1,8 +1,8 @@
 from scapy.layers.l2 import ARP as ScapyARP
 
-from pcap_visualizer.models.layers.data_link.arp import ARP, ARPOperation
+from pcap_visualizer.models import ARP, ARPOperation
 
-class ArpParser:
+class ARPParser:
 	@staticmethod
 	def parse(packet) -> ARP | None:
 		if not packet.haslayer(ScapyARP):

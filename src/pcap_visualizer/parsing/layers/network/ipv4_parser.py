@@ -1,6 +1,6 @@
 from scapy.layers.inet import IP as ScapyIP
 
-from pcap_visualizer.models.layers.network.ipv4 import IPv4, IPv4Protocol
+from pcap_visualizer.models import IPv4, IPv4Protocol
 
 class IPv4Parser:
 	@staticmethod

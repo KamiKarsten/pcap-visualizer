@@ -1,6 +1,8 @@
 from dataclasses import dataclass
 from enum import IntEnum
 
+from pcap_visualizer.models import Layer
+
 class ICMPv6Type(IntEnum):
 	DESTINATION_UNREACHABLE = 1
 	PACKET_TOO_BIG = 2
@@ -13,6 +15,6 @@ class ICMPv6Type(IntEnum):
 	NEIGHBOR_ADVERTISEMENT = 136
 
 @dataclass
-class ICMPv6:
+class ICMPv6(Layer):
     type: ICMPv6Type
     code: int
