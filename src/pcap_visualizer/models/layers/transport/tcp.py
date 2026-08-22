@@ -3,6 +3,7 @@ from enum import IntFlag
 
 from ..layer import Layer
 
+
 class TCPFlags(IntFlag):
 	FIN = 1 << 0
 	SYN = 1 << 1

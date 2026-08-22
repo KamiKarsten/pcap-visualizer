@@ -2,6 +2,7 @@ from scapy.layers.inet import UDP as ScapyUdp
 
 from pcap_visualizer.models import UDP
 
+
 class UDPParser:
 	@staticmethod
 	def parse(packet) -> UDP | None:

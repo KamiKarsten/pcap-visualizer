@@ -1,18 +1,15 @@
 from scapy.layers.inet6 import (
-	ICMPv6EchoRequest,
-	ICMPv6EchoReply,
 	ICMPv6DestUnreach,
-	ICMPv6PacketTooBig,
-	ICMPv6ND_RS,
-	ICMPv6ND_RA,
+	ICMPv6EchoReply,
+	ICMPv6EchoRequest,
+	ICMPv6ND_NA,
 	ICMPv6ND_NS,
-	ICMPv6ND_NA
+	ICMPv6ND_RA,
+	ICMPv6ND_RS,
+	ICMPv6PacketTooBig,
 )
 
-from pcap_visualizer.models import (
-	ICMPv6, 
-	ICMPv6Type
-)
+from pcap_visualizer.models import ICMPv6, ICMPv6Type
 
 ICMPv6_TYPES = {
 	ICMPv6EchoRequest:  ICMPv6Type.ECHO_REQUEST,

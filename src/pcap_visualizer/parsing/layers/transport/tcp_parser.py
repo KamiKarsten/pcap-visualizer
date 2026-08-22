@@ -2,6 +2,7 @@ from scapy.layers.inet import TCP as ScapyTcp
 
 from pcap_visualizer.models import TCP, TCPFlags
 
+
 class TCPParser:
 	@staticmethod
 	def parse(packet) -> TCP | None:
@@ -9,7 +10,7 @@ class TCPParser:
 			return None
 
 		tcp = packet[ScapyTcp]
-		flags = TCPParser.matchFlags(tcp.flags)
+		flags = TCPParser.match_flags(tcp.flags)
 
 		return TCP(
 			source_port=tcp.sport,
@@ -21,7 +22,7 @@ class TCPParser:
 		)
 
 	@staticmethod
-	def matchFlags(scapyFlags) -> TCPFlags: 
+	def match_flags(scapyFlags) -> TCPFlags: 
 
 		result = TCPFlags(0)
 		flags = {

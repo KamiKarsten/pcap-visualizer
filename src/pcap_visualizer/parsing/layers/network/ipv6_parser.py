@@ -2,6 +2,7 @@ from scapy.layers.inet6 import IPv6 as ScapyIPv6
 
 from pcap_visualizer.models import IPv6, IPv6NextHeader
 
+
 class IPv6Parser:
 	@staticmethod
 	def parse(packet) -> IPv6 | None:

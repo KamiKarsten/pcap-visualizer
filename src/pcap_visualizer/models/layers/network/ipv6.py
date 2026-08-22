@@ -3,6 +3,7 @@ from enum import IntEnum
 
 from ..layer import Layer
 
+
 class IPv6NextHeader(IntEnum):
     ICMPv6 = 58
     TCP = 6

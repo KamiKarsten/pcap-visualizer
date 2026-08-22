@@ -1,27 +1,29 @@
 from pcap_visualizer.models import Packet
 
-from .layers import ( 
+from .layers import (
 	ARPParser,
 	EthernetParser,
-	IPv4Parser,
-	IPv6Parser,
 	ICMPParser,
 	ICMPv6Parser,
+	IPv4Parser,
+	IPv6Parser,
 	TCPParser,
-	UDPParser
+	UDPParser,
 )
 
+
 class PacketParser:
-	parsers = [
-		EthernetParser,
-		ARPParser,
-		IPv4Parser,
-		IPv6Parser,
-		ICMPParser,
-		ICMPv6Parser,
-		TCPParser,
-		UDPParser
-	]
+	def __init__(self):
+		self.parsers = [
+			EthernetParser,
+			ARPParser,
+			IPv4Parser,
+			IPv6Parser,
+			ICMPParser,
+			ICMPv6Parser,
+			TCPParser,
+			UDPParser
+		]
 
 	@staticmethod
 	def parse(packet) -> Packet:

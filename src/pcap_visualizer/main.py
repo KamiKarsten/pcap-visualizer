@@ -1,6 +1,7 @@
 from .ingestion.pcap_reader import read_pcap
 from .parsing import PacketParser
 
+
 def main():
 	filename = 'captures/example.pcap'
 	

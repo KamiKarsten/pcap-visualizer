@@ -2,6 +2,7 @@ from scapy.layers.inet import ICMP as ScapyICMP
 
 from pcap_visualizer.models import ICMP, ICMPType
 
+
 class ICMPParser:
 	@staticmethod
 	def parse(packet) -> ICMP | None:

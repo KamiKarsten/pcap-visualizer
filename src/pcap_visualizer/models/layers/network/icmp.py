@@ -3,6 +3,7 @@ from enum import IntEnum
 
 from ..layer import Layer
 
+
 class ICMPType(IntEnum):
 	DESTINATION_UNREACHABLE = 3
 	ECHO_REQUEST = 8

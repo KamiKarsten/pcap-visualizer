@@ -3,6 +3,7 @@ from enum import IntEnum
 
 from ..layer import Layer
 
+
 class ICMPv6Type(IntEnum):
 	DESTINATION_UNREACHABLE = 1
 	PACKET_TOO_BIG = 2

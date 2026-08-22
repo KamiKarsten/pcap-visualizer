@@ -3,6 +3,7 @@ from enum import IntEnum
 
 from ..layer import Layer
 
+
 class IPv4Protocol(IntEnum):
 	ICMP = 1
 	TCP = 6

@@ -2,6 +2,7 @@ from dataclasses import dataclass
 
 from .layers.layer import Layer
 
+
 @dataclass
 class Packet:
 	layers: list[Layer]

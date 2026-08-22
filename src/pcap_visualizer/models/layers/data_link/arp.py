@@ -3,6 +3,7 @@ from enum import IntEnum
 
 from ..layer import Layer
 
+
 class ARPOperation(IntEnum):
 	REQUEST=1
 	RESPONSE=2

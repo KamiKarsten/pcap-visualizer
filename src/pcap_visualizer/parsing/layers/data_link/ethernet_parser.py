@@ -2,6 +2,7 @@ from scapy.layers.l2 import Ether as ScapyEther
 
 from pcap_visualizer.models import Ethernet, EthernetType
 
+
 class EthernetParser: 
 	@staticmethod
 	def parse(packet) -> Ethernet | None: 

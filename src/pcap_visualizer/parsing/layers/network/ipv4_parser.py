@@ -2,6 +2,7 @@ from scapy.layers.inet import IP as ScapyIP
 
 from pcap_visualizer.models import IPv4, IPv4Protocol
 
+
 class IPv4Parser:
 	@staticmethod
 	def parse(packet) -> IPv4 | None:
