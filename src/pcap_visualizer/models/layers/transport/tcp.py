@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from enum import IntFlag
 
-from pcap_visualizer.models import Layer
+from ..layer import Layer
 
 class TCPFlags(IntFlag):
 	FIN = 1 << 0

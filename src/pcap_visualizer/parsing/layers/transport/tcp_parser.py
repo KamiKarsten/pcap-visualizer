@@ -8,7 +8,6 @@ class TCPParser:
 		if not packet.haslayer(ScapyTcp):
 			return None
 
-
 		tcp = packet[ScapyTcp]
 		flags = TCPParser.matchFlags(tcp.flags)
 

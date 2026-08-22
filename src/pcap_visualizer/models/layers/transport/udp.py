@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from pcap_visualizer.models import Layer
+from ..layer import Layer
 
 @dataclass()
 class UDP(Layer):

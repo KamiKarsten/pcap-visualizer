@@ -8,3 +8,5 @@ from .layers import (
 	TCPParser,
 	UDPParser
 )
+
+from .packet_parser import PacketParser

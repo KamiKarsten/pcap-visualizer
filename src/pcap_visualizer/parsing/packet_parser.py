@@ -1,5 +1,6 @@
 from pcap_visualizer.models import Packet
-from .packet_parser import (
+
+from .layers import ( 
 	ARPParser,
 	EthernetParser,
 	IPv4Parser,

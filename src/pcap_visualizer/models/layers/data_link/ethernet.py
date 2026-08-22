@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from enum import IntEnum
 
-from pcap_visualizer.models import Layer
+from ..layer import Layer
 
 class EthernetType(IntEnum):
 	IPV4 = 0x0800
