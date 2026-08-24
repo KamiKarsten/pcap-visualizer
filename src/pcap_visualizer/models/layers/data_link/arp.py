@@ -6,7 +6,7 @@ from ..layer import Layer
 
 class ARPOperation(IntEnum):
 	REQUEST=1
-	RESPONSE=2
+	REPLY=2
 
 @dataclass()
 class ARP(Layer): 

@@ -10,5 +10,14 @@ dependencies = [
 	"scapy",
 ]
 
+[dependency-groups]
+dev = [
+	"pytest",
+	"coverage"
+]
+
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.coverage.run]
+source = ["src/pcap_visualizer"]

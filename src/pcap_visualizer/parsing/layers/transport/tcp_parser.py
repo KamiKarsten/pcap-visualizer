@@ -10,7 +10,7 @@ class TCPParser:
 			return None
 
 		tcp = packet[ScapyTcp]
-		flags = TCPParser.match_flags(tcp.flags)
+		flags = TCPParser._match_flags(tcp.flags)
 
 		return TCP(
 			source_port=tcp.sport,
@@ -22,7 +22,7 @@ class TCPParser:
 		)
 
 	@staticmethod
-	def match_flags(scapyFlags) -> TCPFlags: 
+	def _match_flags(scapyFlags) -> TCPFlags: 
 
 		result = TCPFlags(0)
 		flags = {
