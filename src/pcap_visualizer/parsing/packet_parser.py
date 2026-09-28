@@ -1,3 +1,5 @@
+from typing import ClassVar
+
 from pcap_visualizer.models import Packet
 
 from .layers import (
@@ -13,17 +15,16 @@ from .layers import (
 
 
 class PacketParser:
-	def __init__(self):
-		self.parsers = [
-			EthernetParser,
-			ARPParser,
-			IPv4Parser,
-			IPv6Parser,
-			ICMPParser,
-			ICMPv6Parser,
-			TCPParser,
-			UDPParser
-		]
+	parsers: ClassVar = [
+		EthernetParser,
+		ARPParser,
+		IPv4Parser,
+		IPv6Parser,
+		ICMPParser,
+		ICMPv6Parser,
+		TCPParser,
+		UDPParser
+	]
 
 	@staticmethod
 	def parse(packet) -> Packet:

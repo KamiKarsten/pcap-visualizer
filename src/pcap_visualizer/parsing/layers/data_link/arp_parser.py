@@ -12,7 +12,7 @@ class ARPParser:
 		arp = packet[ScapyARP]
 
 		return ARP(
-			source_ip = arp.src,
+			source_ip = arp.psrc,
 			source_mac = arp.hwsrc,
 			destination_ip = arp.pdst,
 			destination_mac = arp.hwdst,
