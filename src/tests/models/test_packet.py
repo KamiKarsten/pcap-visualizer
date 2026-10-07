@@ -14,12 +14,14 @@ def test_packet_creation():
 	)
 
 	packet = Packet(
-		layers=[ethernet],
+		layer=ethernet,
 		size=100,
+		timestamp=12345
 	)
 
-	assert packet.layers == [ethernet]
+	assert packet.layer == ethernet
 	assert packet.size == 100
+	assert packet.timestamp == 12345
 
 
 def test_get_layer_returns_matching_layer():
@@ -30,8 +32,9 @@ def test_get_layer_returns_matching_layer():
 	)
 
 	packet = Packet(
-		layers=[ethernet],
+		layer=ethernet,
 		size=100,
+		timestamp=12345
 	)
 
 	result = packet.get_layer(Ethernet)
@@ -47,8 +50,9 @@ def test_get_layer_returns_none_when_layer_is_missing():
 	)
 
 	packet = Packet(
-		layers=[ethernet],
+		layer=ethernet,
 		size=100,
+		timestamp=12345
 	)
 
 	result = packet.get_layer(IPv4)
@@ -64,8 +68,9 @@ def test_has_layer_returns_true_when_layer_exists():
 	)
 
 	packet = Packet(
-		layers=[ethernet],
+		layer=ethernet,
 		size=100,
+		timestamp=12345
 	)
 
 	assert packet.has_layer(Ethernet) is True
@@ -79,8 +84,9 @@ def test_has_layer_returns_false_when_layer_is_missing():
 	)
 
 	packet = Packet(
-		layers=[ethernet],
+		layer=ethernet,
 		size=100,
+		timestamp=12345
 	)
 
 	assert packet.has_layer(IPv4) is False

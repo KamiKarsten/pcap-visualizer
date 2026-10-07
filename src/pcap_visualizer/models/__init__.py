@@ -14,6 +14,7 @@ from .layers import (
     IPv6,
     IPv6NextHeader,
     TCPFlags,
+    Layer
 )
 from .packet import Packet
 
@@ -34,4 +35,5 @@ __all__ = [
     "IPv6NextHeader",
 	"Packet",
     "TCPFlags",
+    "Layer"
 ]

@@ -1,18 +1,38 @@
 from dataclasses import dataclass
+from datetime import datetime
 
 from .layers.layer import Layer
 
 
 @dataclass
 class Packet:
-	layers: list[Layer]
+	layer: Layer
 	size: int
+	timestamp: datetime
 
+	def __str__(self):
+		return f"{self.layer} ({self.size} bytes)"
+	
 	def get_layer(self, layer_type: type[Layer]) -> Layer | None:
-		for layer in self.layers:
-			if isinstance(layer, layer_type):
-				return layer
+		
+		current_layer = self.layer
+
+		while current_layer is not None:
+			if isinstance(current_layer, layer_type):
+				return current_layer
+
+			current_layer = current_layer.payload
+		
 		return None
 
 	def has_layer(self, layer_type: type[Layer]) -> bool:
-		return any(isinstance(layer, layer_type) for layer in self.layers)
+		
+		current_layer = self.layer
+		
+		while current_layer is not None:
+			if isinstance(current_layer, layer_type):
+				return True
+			current_layer = current_layer.payload
+		
+		return False
+		
