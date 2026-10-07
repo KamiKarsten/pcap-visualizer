@@ -4,7 +4,7 @@ from pcap_visualizer.models import ICMP, ICMPType
 
 
 class ICMPMapper:
-	
+
 	@staticmethod
 	def map(layer) -> ICMP | None:
 	

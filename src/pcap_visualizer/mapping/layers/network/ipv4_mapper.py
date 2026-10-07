@@ -4,10 +4,10 @@ from pcap_visualizer.models import IPv4, IPv4Protocol
 
 
 class IPv4Mapper:
-	
+
 	@staticmethod
 	def map(layer) -> IPv4 | None:
-		
+
 		if not isinstance(layer, ScapyIP):
 			return None
 

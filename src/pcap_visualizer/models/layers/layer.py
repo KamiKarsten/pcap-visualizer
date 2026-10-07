@@ -4,7 +4,7 @@ from dataclasses import dataclass
 
 
 @dataclass(kw_only=True)
-class Layer(ABC):
+class Layer:
 	payload: "Layer | None" = None
 
 	def __str__(self):

@@ -4,7 +4,7 @@ from .mapping import PacketMapper
 
 def main():
 	filename = 'captures/example.pcap'
-	
+
 	for packet in read_pcap(filename):
 		packet_info = PacketMapper.map(packet)
 		print(packet_info)

@@ -23,24 +23,24 @@ def test_map_returns_none_when_packet_has_no_icmpv6_layer():
 	assert result is None
 
 @pytest.mark.parametrize(
-    ("scapy_type", "expected_type"),
-    [
-        (ICMPv6EchoRequest, ICMPv6Type.ECHO_REQUEST),
-        (ICMPv6EchoReply, ICMPv6Type.ECHO_REPLY),
-        (ICMPv6DestUnreach, ICMPv6Type.DESTINATION_UNREACHABLE),
-        (ICMPv6PacketTooBig, ICMPv6Type.PACKET_TOO_BIG),
-        (ICMPv6ND_RS, ICMPv6Type.ROUTER_SOLICITATION),
-        (ICMPv6ND_RA, ICMPv6Type.ROUTER_ADVERTISEMENT),
-        (ICMPv6ND_NS, ICMPv6Type.NEIGHBOR_SOLICITATION),
-        (ICMPv6ND_NA, ICMPv6Type.NEIGHBOR_ADVERTISEMENT),
-    ],
+	("scapy_type", "expected_type"),
+	[
+		(ICMPv6EchoRequest, ICMPv6Type.ECHO_REQUEST),
+		(ICMPv6EchoReply, ICMPv6Type.ECHO_REPLY),
+		(ICMPv6DestUnreach, ICMPv6Type.DESTINATION_UNREACHABLE),
+		(ICMPv6PacketTooBig, ICMPv6Type.PACKET_TOO_BIG),
+		(ICMPv6ND_RS, ICMPv6Type.ROUTER_SOLICITATION),
+		(ICMPv6ND_RA, ICMPv6Type.ROUTER_ADVERTISEMENT),
+		(ICMPv6ND_NS, ICMPv6Type.NEIGHBOR_SOLICITATION),
+		(ICMPv6ND_NA, ICMPv6Type.NEIGHBOR_ADVERTISEMENT),
+	],
 )
 def test_map_returns_icmpv6_type(scapy_type, expected_type):
-    layer = scapy_type(code=0)
+	layer = scapy_type(code=0)
 
-    result = ICMPv6Mapper.map(layer)
+	result = ICMPv6Mapper.map(layer)
 
-    assert result is not None
-    assert isinstance(result, ICMPv6)
-    assert result.type == expected_type
-    assert result.code == 0
+	assert result is not None
+	assert isinstance(result, ICMPv6)
+	assert result.type == expected_type
+	assert result.code == 0

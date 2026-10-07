@@ -4,7 +4,7 @@ from pcap_visualizer.models import UDP
 
 
 class UDPMapper:
-	
+
 	@staticmethod
 	def map(layer) -> UDP | None:
 		if not isinstance(layer, ScapyUdp):

@@ -4,10 +4,10 @@ from pcap_visualizer.models import ARP, ARPOperation
 
 
 class ARPMapper:
-	
+
 	@staticmethod
 	def map(layer) -> ARP | None:
-		
+
 		if not isinstance(layer, ScapyARP):
 			return None
 

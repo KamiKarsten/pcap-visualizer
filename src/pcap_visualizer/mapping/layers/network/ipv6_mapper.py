@@ -4,7 +4,7 @@ from pcap_visualizer.models import IPv6, IPv6NextHeader
 
 
 class IPv6Mapper:
-	
+
 	@staticmethod
 	def map(layer) -> IPv6 | None:
 		

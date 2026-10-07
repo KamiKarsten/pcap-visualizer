@@ -17,7 +17,7 @@ from .layers import (
 
 
 class PacketMapper:
-	mappers: ClassVar = [
+	mappers: ClassVar[list[type]] = [
 		EthernetMapper,
 		ARPMapper,
 		IPv4Mapper,

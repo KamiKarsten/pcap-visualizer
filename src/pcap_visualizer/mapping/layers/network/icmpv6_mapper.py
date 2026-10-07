@@ -12,7 +12,7 @@ from scapy.layers.inet6 import (
 from pcap_visualizer.models import ICMPv6, ICMPv6Type
 
 ICMPv6_TYPES = {
-	ICMPv6EchoRequest:  ICMPv6Type.ECHO_REQUEST,
+	ICMPv6EchoRequest: ICMPv6Type.ECHO_REQUEST,
 	ICMPv6EchoReply: ICMPv6Type.ECHO_REPLY,
 	ICMPv6DestUnreach: ICMPv6Type.DESTINATION_UNREACHABLE,
 	ICMPv6PacketTooBig: ICMPv6Type.PACKET_TOO_BIG,
@@ -23,7 +23,7 @@ ICMPv6_TYPES = {
 }
 
 class ICMPv6Mapper:
-	
+
 	@staticmethod
 	def map(layer) -> ICMPv6 | None:
 
@@ -36,5 +36,3 @@ class ICMPv6Mapper:
 			type=icmpv6_type,
 			code=layer.code
 		)
-
-		return None

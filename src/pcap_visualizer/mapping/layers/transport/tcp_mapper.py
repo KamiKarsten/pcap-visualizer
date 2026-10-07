@@ -4,10 +4,10 @@ from pcap_visualizer.models import TCP, TCPFlags
 
 
 class TCPMapper:
-	
+
 	@staticmethod
 	def map(layer) -> TCP | None:
-		
+
 		if not isinstance(layer, ScapyTcp):
 			return None
 
