@@ -28,10 +28,10 @@ class InformationExtractor:
 	def extract(packet: Packet) -> list[Information]:
 		information: list[Information] = []
 		layer: Layer | None = packet.layer
-		highest_layer: Layer | None = None
+		deepest_layer: Layer | None = None
 
 		while layer is not None:
-			highest_layer = layer
+			deepest_layer = layer
 			extractor = EXTRACTORS.get(type(layer))
 
 			if extractor is not None:
@@ -39,10 +39,10 @@ class InformationExtractor:
 
 			layer = layer.payload
 
-		if highest_layer is not None:
+		if deepest_layer is not None:
 			information.append(
 				ProtocolInfo(
-					protocol=type(highest_layer).__name__
+					protocol=type(deepest_layer).__name__
 				)
 			)
 
