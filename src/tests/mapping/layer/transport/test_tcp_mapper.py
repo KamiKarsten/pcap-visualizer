@@ -2,8 +2,8 @@ import pytest
 from scapy.layers.inet import IP
 from scapy.layers.inet import TCP as ScapyTCP
 
-from pcap_visualizer.models import TCP, TCPFlags
 from pcap_visualizer.mapping import TCPMapper
+from pcap_visualizer.models import TCP, TCPFlags
 
 
 def test_map_returns_none_when_packet_has_no_tcp_layer():

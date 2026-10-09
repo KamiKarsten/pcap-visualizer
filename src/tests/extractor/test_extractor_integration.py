@@ -1,8 +1,8 @@
 from scapy.layers.inet import IP, TCP
 from scapy.layers.l2 import Ether
 
-from pcap_visualizer.mapping import PacketMapper
 from pcap_visualizer.extractor.information_extractor import InformationExtractor
+from pcap_visualizer.mapping import PacketMapper
 from pcap_visualizer.models.information import (
 	AddressInfo,
 	MacAddressInfo,

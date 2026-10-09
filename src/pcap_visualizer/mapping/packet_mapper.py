@@ -1,7 +1,7 @@
 from typing import ClassVar
+
 from scapy.packet import NoPayload
 
-from pcap_visualizer.models import Layer, Packet
 from pcap_visualizer.mapping import (
 	ARPMapper,
 	EthernetMapper,
@@ -12,6 +12,7 @@ from pcap_visualizer.mapping import (
 	TCPMapper,
 	UDPMapper,
 )
+from pcap_visualizer.models import Layer, Packet
 
 
 class PacketMapper:

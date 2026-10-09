@@ -1,8 +1,8 @@
 from scapy.layers.inet import IP
 from scapy.layers.inet import UDP as ScapyUDP
 
-from pcap_visualizer.models import UDP
 from pcap_visualizer.mapping import UDPMapper
+from pcap_visualizer.models import UDP
 
 
 def test_map_returns_none_when_packet_has_no_udp_layer():

@@ -1,5 +1,5 @@
 from pcap_visualizer.extractor.extractor import Extractor
-from pcap_visualizer.models.information import MacAddressInfo, AddressInfo, Information
+from pcap_visualizer.models.information import AddressInfo, Information, MacAddressInfo
 from pcap_visualizer.models.layer import ARP
 
 

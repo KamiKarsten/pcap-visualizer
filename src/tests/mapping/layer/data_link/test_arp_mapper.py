@@ -2,8 +2,8 @@ import pytest
 from scapy.layers.l2 import ARP as ScapyARP
 from scapy.layers.l2 import Ether
 
-from pcap_visualizer.models import ARP, ARPOperation
 from pcap_visualizer.mapping import ARPMapper
+from pcap_visualizer.models import ARP, ARPOperation
 
 
 def test_map_returns_none_when_packet_has_no_arp_layer():

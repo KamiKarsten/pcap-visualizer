@@ -2,8 +2,8 @@ import pytest
 from scapy.layers.inet import ICMP as ScapyICMP
 from scapy.layers.inet import IP
 
-from pcap_visualizer.models import ICMP, ICMPType
 from pcap_visualizer.mapping import ICMPMapper
+from pcap_visualizer.models import ICMP, ICMPType
 
 
 def test_map_returns_none_when_packet_has_no_icmp_layer():

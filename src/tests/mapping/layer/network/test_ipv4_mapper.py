@@ -2,8 +2,8 @@ import pytest
 from scapy.layers.inet import ICMP
 from scapy.layers.inet import IP as ScapyIP
 
-from pcap_visualizer.models import IPv4, IPv4Protocol
 from pcap_visualizer.mapping import IPv4Mapper
+from pcap_visualizer.models import IPv4, IPv4Protocol
 
 
 def test_map_returns_none_when_packet_has_no_ipv4_layer():

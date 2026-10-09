@@ -1,8 +1,22 @@
 from datetime import datetime
 
 from pcap_visualizer.extractor.information_extractor import InformationExtractor
-from pcap_visualizer.models import Ethernet, EthernetType, IPv4, IPv4Protocol, Layer, Packet, TCP, TCPFlags
-from pcap_visualizer.models.information import AddressInfo, MacAddressInfo, PortInfo, ProtocolInfo
+from pcap_visualizer.models import (
+	TCP,
+	Ethernet,
+	EthernetType,
+	IPv4,
+	IPv4Protocol,
+	Layer,
+	Packet,
+	TCPFlags,
+)
+from pcap_visualizer.models.information import (
+	AddressInfo,
+	MacAddressInfo,
+	PortInfo,
+	ProtocolInfo,
+)
 
 
 def test_extract_returns_empty_list_for_packet_without_layer():

@@ -1,11 +1,17 @@
 from typing import Any
 
-from pcap_visualizer.models import Packet, Layer, Ethernet, ARP, IPv4, IPv6, TCP, UDP 
-from pcap_visualizer.models.information import Information, ProtocolInfo
-
 from pcap_visualizer.extractor.extractor import Extractor
-from pcap_visualizer.extractor import EtherExtractor, ArpExtractor, Ipv4Extractor, Ipv6Extractor, TCPExtractor, UDPExtractor
-
+from pcap_visualizer.extractor.layer import (
+	ArpExtractor,
+	EtherExtractor,
+	Ipv4Extractor,
+	Ipv6Extractor,
+	TCPExtractor,
+	UDPExtractor,
+)
+from pcap_visualizer.models.information import Information, ProtocolInfo
+from pcap_visualizer.models.layer import ARP, TCP, UDP, Ethernet, IPv4, IPv6, Layer
+from pcap_visualizer.models.packet import Packet
 
 EXTRACTORS: dict[type[Layer], Extractor[Any]] = {
 		Ethernet: EtherExtractor(),

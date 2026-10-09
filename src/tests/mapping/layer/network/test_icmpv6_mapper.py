@@ -11,8 +11,8 @@ from scapy.layers.inet6 import (
 	IPv6,
 )
 
-from pcap_visualizer.models import ICMPv6, ICMPv6Type
 from pcap_visualizer.mapping import ICMPv6Mapper
+from pcap_visualizer.models import ICMPv6, ICMPv6Type
 
 
 def test_map_returns_none_when_packet_has_no_icmpv6_layer():

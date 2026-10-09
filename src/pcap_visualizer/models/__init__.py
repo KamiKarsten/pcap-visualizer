@@ -13,10 +13,10 @@ from .layer import (
 	IPv4Protocol,
 	IPv6,
 	IPv6NextHeader,
-	TCPFlags,
 	Layer,
+	TCPFlags,
 )
-from .packet.packet import Packet
+from .packet import Packet
 
 __all__ = [
 	"ARP",
@@ -33,7 +33,7 @@ __all__ = [
 	"IPv4Protocol",
 	"IPv6",
 	"IPv6NextHeader",
-	"TCPFlags",
 	"Layer",
 	"Packet",
+	"TCPFlags",
 ]

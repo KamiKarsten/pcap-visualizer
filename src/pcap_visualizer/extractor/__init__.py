@@ -1,8 +1,15 @@
-from .layer import EtherExtractor, ArpExtractor, Ipv4Extractor, Ipv6Extractor, TCPExtractor, UDPExtractor
+from .layer import (
+	ArpExtractor,
+	EtherExtractor,
+	Ipv4Extractor,
+	Ipv6Extractor,
+	TCPExtractor,
+	UDPExtractor,
+)
 
 __all__ = [
-	"EtherExtractor",
 	"ArpExtractor",
+	"EtherExtractor",
 	"Ipv4Extractor",
 	"Ipv6Extractor",
 	"TCPExtractor",

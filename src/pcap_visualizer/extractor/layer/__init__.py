@@ -1,10 +1,10 @@
-from .data_link import EtherExtractor, ArpExtractor
+from .data_link import ArpExtractor, EtherExtractor
 from .network import Ipv4Extractor, Ipv6Extractor
 from .transport import TCPExtractor, UDPExtractor
 
 __all__ = [
-	"EtherExtractor",
 	"ArpExtractor",
+	"EtherExtractor",
 	"Ipv4Extractor",
 	"Ipv6Extractor",
 	"TCPExtractor",

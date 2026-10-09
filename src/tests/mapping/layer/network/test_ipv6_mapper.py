@@ -2,8 +2,8 @@ import pytest
 from scapy.layers.inet import IP as ScapyIP
 from scapy.layers.inet6 import IPv6 as ScapyIPv6
 
-from pcap_visualizer.models import IPv6, IPv6NextHeader
 from pcap_visualizer.mapping import IPv6Mapper
+from pcap_visualizer.models import IPv6, IPv6NextHeader
 
 
 def test_map_returns_none_when_packet_has_no_ipv6_layer():

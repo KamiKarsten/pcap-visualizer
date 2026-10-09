@@ -3,9 +3,9 @@ from unittest.mock import MagicMock, patch
 from scapy.layers.inet import IP
 from scapy.layers.l2 import Ether
 
+from pcap_visualizer.mapping import PacketMapper
 from pcap_visualizer.models import Packet
 from pcap_visualizer.models.layer.layer import Layer
-from pcap_visualizer.mapping import PacketMapper
 
 
 def test_map_adds_layer_when_mapper_returns_layer():

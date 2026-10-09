@@ -2,8 +2,8 @@ import pytest
 from scapy.layers.inet import IP
 from scapy.layers.l2 import Ether
 
-from pcap_visualizer.models import Ethernet, EthernetType
 from pcap_visualizer.mapping import EthernetMapper
+from pcap_visualizer.models import Ethernet, EthernetType
 
 
 def test_map_returns_none_when_packet_has_no_ethernet_layer():
