@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from enum import IntEnum
 
-from pcap_visualizer.models import Layer
+from pcap_visualizer.models.layer.layer import Layer
 
 
 class IPv4Protocol(IntEnum):

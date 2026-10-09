@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from pcap_visualizer.models import Layer
+from pcap_visualizer.models.layer.layer import Layer
 
 
 @dataclass()
