@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import UTC, datetime
 
 from pcap_visualizer.extractor.information_extractor import InformationExtractor
 from pcap_visualizer.models import (
@@ -14,21 +14,28 @@ from pcap_visualizer.models import (
 from pcap_visualizer.models.information import (
 	AddressInfo,
 	MacAddressInfo,
+	PacketInfo,
 	PortInfo,
 	ProtocolInfo,
 )
 
+TIMESTAMP = datetime(2026, 10, 10, 1, 13, 35, 456789, tzinfo=UTC)
 
 def test_extract_returns_empty_list_for_packet_without_layer():
 	packet = Packet(
 		layer=None,
 		size=0,
-		timestamp=datetime.now(),
+		timestamp=TIMESTAMP,
 	)
 
 	result = InformationExtractor.extract(packet)
 
-	assert result == []
+	assert result == [
+		PacketInfo(
+			size=0,
+			timestamp=TIMESTAMP,
+		),
+	]
 
 
 def test_extract_returns_information_and_protocol_for_single_layer():
@@ -39,12 +46,16 @@ def test_extract_returns_information_and_protocol_for_single_layer():
 			ether_type=EthernetType.IPV4,
 		),
 		size=64,
-		timestamp=datetime.now(),
+		timestamp=TIMESTAMP,
 	)
 
 	result = InformationExtractor.extract(packet)
 
 	assert result == [
+		PacketInfo(
+			size=64,
+			timestamp=TIMESTAMP,
+		),
 		MacAddressInfo(
 			source="00:11:22:33:44:55",
 			destination="AA:BB:CC:DD:EE:FF",
@@ -78,12 +89,16 @@ def test_extract_collects_information_from_layer_chain():
 	packet = Packet(
 		layer=ethernet,
 		size=100,
-		timestamp=datetime.now(),
+		timestamp=TIMESTAMP,
 	)
 
 	result = InformationExtractor.extract(packet)
 
 	assert result == [
+		PacketInfo(
+			size=100,
+			timestamp=TIMESTAMP,
+		),
 		MacAddressInfo(
 			source="00:11:22:33:44:55",
 			destination="AA:BB:CC:DD:EE:FF",
@@ -116,12 +131,16 @@ def test_extract_continues_after_unsupported_layer():
 	packet = Packet(
 		layer=unsupported,
 		size=64,
-		timestamp=datetime.now(),
+		timestamp=TIMESTAMP,
 	)
 
 	result = InformationExtractor.extract(packet)
 
 	assert result == [
+		PacketInfo(
+			size=64,
+			timestamp=TIMESTAMP,
+		),
 		PortInfo(
 			source=12345,
 			destination=80,

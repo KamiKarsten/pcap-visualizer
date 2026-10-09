@@ -1,3 +1,4 @@
+from datetime import UTC, datetime
 from typing import ClassVar
 
 from scapy.packet import NoPayload
@@ -49,7 +50,10 @@ class PacketMapper:
 		return Packet(
 			layer=root_layer,
 			size=len(packet),
-			timestamp=packet.time
+			timestamp=datetime.fromtimestamp(
+				float(packet.time),
+				tz=UTC
+			)
 		)
 
 	@staticmethod
