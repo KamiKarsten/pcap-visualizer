@@ -1,4 +1,4 @@
-from .layers import (
+from .layer import (
 	ARP,
 	ICMP,
 	TCP,
@@ -13,8 +13,8 @@ from .layers import (
 	IPv4Protocol,
 	IPv6,
 	IPv6NextHeader,
+	Layer,
 	TCPFlags,
-	Layer
 )
 from .packet import Packet
 
@@ -33,7 +33,7 @@ __all__ = [
 	"IPv4Protocol",
 	"IPv6",
 	"IPv6NextHeader",
+	"Layer",
 	"Packet",
 	"TCPFlags",
-	"Layer"
 ]

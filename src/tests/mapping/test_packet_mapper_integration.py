@@ -1,18 +1,27 @@
-from scapy.layers.l2 import Ether as ScapyEther
-from scapy.layers.l2 import ARP as ScapyARP
-
-from scapy.layers.inet import IP as ScapyIP
-from scapy.layers.inet6 import IPv6 as ScapyIPv6
-from scapy.layers.inet import TCP as ScapyTCP
-from scapy.layers.inet import UDP as ScapyUDP
-from scapy.layers.inet import ICMP as ScapyICMP
-from scapy.layers.inet6 import ICMPv6EchoRequest as ScapyICMPv6EchoRequest
 from scapy.layers.dns import DNS as ScapyDNS
 from scapy.layers.dns import DNSQR as ScapyDNSQR
+from scapy.layers.inet import ICMP as ScapyICMP
+from scapy.layers.inet import IP as ScapyIP
+from scapy.layers.inet import TCP as ScapyTCP
+from scapy.layers.inet import UDP as ScapyUDP
+from scapy.layers.inet6 import ICMPv6EchoRequest as ScapyICMPv6EchoRequest
+from scapy.layers.inet6 import IPv6 as ScapyIPv6
+from scapy.layers.l2 import ARP as ScapyARP
+from scapy.layers.l2 import Ether as ScapyEther
 
-
-from pcap_visualizer.models import Packet, Ethernet, ARP, IPv4, IPv6, TCP, UDP, ICMP, ICMPv6, ICMPv6Type
 from pcap_visualizer.mapping import PacketMapper
+from pcap_visualizer.models import (
+	ARP,
+	ICMP,
+	TCP,
+	UDP,
+	Ethernet,
+	ICMPv6,
+	ICMPv6Type,
+	IPv4,
+	IPv6,
+	Packet,
+)
 
 
 def test_map_ipv4_tcp_packet():

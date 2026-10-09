@@ -24,6 +24,15 @@ Install the project in editable mode:
 Run the application:
 `python -m pcap_visualizer.main`
 
+## Program flow
+
+1. Ingestion: PCAP files are read and parsed into Scapy packets.
+2. Mapping: Scapy packets are mapped to custom protocol layer models.
+3. Information Extraction: Protocol-specific extractors process the custom models and extract standardized information, such as MAC addresses, IP addresses, ports, and protocol identifiers.
+4. Analysis: The extracted information provides a foundation for further analysis and visualization.
+
+PCAP ingestion -> Scapy packets -> mapping to custom models -> information extraction via extractors.
+
 ## Ideas
 
 - Visualize all IP addresses as nodes with connections between them
