@@ -4,7 +4,7 @@ from scapy.layers.inet import IP
 from scapy.layers.l2 import Ether
 
 from pcap_visualizer.models import Packet
-from pcap_visualizer.models.layers.layer import Layer
+from pcap_visualizer.models.layer.layer import Layer
 from pcap_visualizer.mapping import PacketMapper
 
 

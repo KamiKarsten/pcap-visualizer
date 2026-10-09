@@ -1,10 +1,8 @@
 from typing import ClassVar
-
 from scapy.packet import NoPayload
 
 from pcap_visualizer.models import Layer, Packet
-
-from .layers import (
+from pcap_visualizer.mapping import (
 	ARPMapper,
 	EthernetMapper,
 	ICMPMapper,
