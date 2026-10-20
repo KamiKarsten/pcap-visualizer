@@ -4,6 +4,7 @@
 # cache
 __pycache__/
 *.py[cod]
+.pytest_cache/
 
 # coverage
 .coverage
@@ -15,8 +16,17 @@ coverage.xml
 build/
 dist/
 
+# captures
 *.pcap
 *.pcapng
+captures/
+
+# agent tooling
+.codegraph
+.omo/
 
 # IDE
 .vscode/
+
+# OS junk
+.DS_Store
