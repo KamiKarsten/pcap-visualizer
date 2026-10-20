@@ -18,4 +18,4 @@ def test_ethernet_creation():
 def test_ethernet_type_values():
 	assert EthernetType.IPV4 == 0x0800
 	assert EthernetType.ARP == 0x0806
-	assert EthernetType.IPV6 == 0x086DD
+	assert EthernetType.IPV6 == 0x86DD

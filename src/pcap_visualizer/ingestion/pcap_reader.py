@@ -1,4 +1,4 @@
-from scapy.all import PcapReader
+from scapy.utils import PcapReader
 
 
 def read_pcap(filename):

@@ -18,6 +18,7 @@ dev = [
 
 [tool.setuptools.packages.find]
 where = ["src"]
+exclude = ["tests*"]
 
 [tool.coverage.run]
 source = ["src/pcap_visualizer"]
