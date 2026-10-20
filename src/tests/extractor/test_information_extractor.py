@@ -57,10 +57,12 @@ def test_extract_returns_information_and_protocol_for_single_layer():
 			timestamp=TIMESTAMP,
 		),
 		MacAddressInfo(
-			source="00:11:22:33:44:55",
-			destination="AA:BB:CC:DD:EE:FF",
+			source_mac="00:11:22:33:44:55",
+			destination_mac="AA:BB:CC:DD:EE:FF",
 		),
-		ProtocolInfo(protocol="Ethernet"),
+		ProtocolInfo(
+			protocol_type="Ethernet"
+		),
 	]
 
 
@@ -100,18 +102,20 @@ def test_extract_collects_information_from_layer_chain():
 			timestamp=TIMESTAMP,
 		),
 		MacAddressInfo(
-			source="00:11:22:33:44:55",
-			destination="AA:BB:CC:DD:EE:FF",
+			source_mac="00:11:22:33:44:55",
+			destination_mac="AA:BB:CC:DD:EE:FF",
 		),
 		AddressInfo(
-			source="192.168.1.10",
-			destination="192.168.1.20",
+			source_ip="192.168.1.10",
+			destination_ip="192.168.1.20",
 		),
 		PortInfo(
-			source=54321,
-			destination=443,
+			source_port=54321,
+			destination_port=443,
 		),
-		ProtocolInfo(protocol="TCP"),
+		ProtocolInfo(
+			protocol_type="TCP"
+		),
 	]
 
 
@@ -142,8 +146,10 @@ def test_extract_continues_after_unsupported_layer():
 			timestamp=TIMESTAMP,
 		),
 		PortInfo(
-			source=12345,
-			destination=80,
+			source_port=12345,
+			destination_port=80,
 		),
-		ProtocolInfo(protocol="TCP"),
+		ProtocolInfo(
+			protocol_type="TCP"
+		),
 	]

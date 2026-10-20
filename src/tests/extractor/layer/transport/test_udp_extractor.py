@@ -14,7 +14,7 @@ def test_extract_returns_port_information():
 
 	assert result == [
 		PortInfo(
-			source=5353,
-			destination=53,
+			source_port=5353,
+			destination_port=53,
 		)
 	]

@@ -48,7 +48,7 @@ class InformationExtractor:
 		if deepest_layer is not None:
 			information.append(
 				ProtocolInfo(
-					protocol=type(deepest_layer).__name__
+					protocol_type = type(deepest_layer).__name__
 				)
 			)
 

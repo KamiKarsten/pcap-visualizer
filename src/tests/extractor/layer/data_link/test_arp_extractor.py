@@ -16,11 +16,11 @@ def test_extract_returns_mac_and_address_information():
 
 	assert result == [
 		MacAddressInfo(
-			source="00:11:22:33:44:55",
-			destination="AA:BB:CC:DD:EE:FF",
+			source_mac="00:11:22:33:44:55",
+			destination_mac="AA:BB:CC:DD:EE:FF",
 		),
 		AddressInfo(
-			source="192.168.1.10",
-			destination="192.168.1.1",
+			source_ip="192.168.1.10",
+			destination_ip="192.168.1.1",
 		),
 	]
