@@ -7,7 +7,7 @@ class TCPExtractor(Extractor[PortInfo]):
 	def extract(self, layer: TCP) -> list[PortInfo]:
 		return [
 			PortInfo(
-				source = layer.source_port,
-				destination = layer.destination_port
+				source_port = layer.source_port,
+				destination_port = layer.destination_port
 			)
 		]

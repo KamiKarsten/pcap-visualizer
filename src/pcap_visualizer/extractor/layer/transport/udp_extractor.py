@@ -7,7 +7,7 @@ class UDPExtractor(Extractor[PortInfo]):
 	def extract(self, layer: UDP) -> list[PortInfo]:
 		return [
 			PortInfo(
-				source= layer.source_port,
-				destination= layer.destination_port
+				source_port= layer.source_port,
+				destination_port= layer.destination_port
 			)
 		]

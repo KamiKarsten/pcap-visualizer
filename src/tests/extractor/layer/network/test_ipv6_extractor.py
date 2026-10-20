@@ -15,7 +15,7 @@ def test_extract_returns_address_information():
 
 	assert result == [
 		AddressInfo(
-			source="2001:db8::1",
-			destination="2001:db8::2",
+			source_ip="2001:db8::1",
+			destination_ip="2001:db8::2",
 		)
 	]

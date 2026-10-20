@@ -7,7 +7,7 @@ class Ipv4Extractor(Extractor[AddressInfo]):
 	def extract(self, layer: IPv4) -> list[AddressInfo]:
 		return [
 			AddressInfo(
-				source = layer.source_ip,
-				destination=layer.destination_ip
+				source_ip=layer.source_ip,
+				destination_ip=layer.destination_ip
 			)
 		]

@@ -1,3 +1,5 @@
+from datetime import UTC, datetime
+
 from scapy.layers.inet import IP, TCP
 from scapy.layers.l2 import Ether
 
@@ -6,12 +8,15 @@ from pcap_visualizer.mapping import PacketMapper
 from pcap_visualizer.models.information import (
 	AddressInfo,
 	MacAddressInfo,
+	PacketInfo,
 	PortInfo,
 	ProtocolInfo,
 )
 
 
 def test_extract_information_from_scapy_packet():
+	timestamp = datetime(2026, 10, 10, 1, 13, 35, 456789, tzinfo=UTC)
+	
 	scapy_packet = (
 		Ether(
 			src="00:11:22:33:44:55",
@@ -31,22 +36,29 @@ def test_extract_information_from_scapy_packet():
 			window=65535,
 		)
 	)
+	scapy_packet.time = timestamp.timestamp()
 
 	packet = PacketMapper.map(scapy_packet)
 	result = InformationExtractor.extract(packet)
 
 	assert result == [
+		PacketInfo(
+			size=len(scapy_packet),
+			timestamp=timestamp,
+		),
 		MacAddressInfo(
-			source="00:11:22:33:44:55",
-			destination="AA:BB:CC:DD:EE:FF",
+			source_mac="00:11:22:33:44:55",
+			destination_mac="AA:BB:CC:DD:EE:FF",
 		),
 		AddressInfo(
-			source="192.168.1.10",
-			destination="192.168.1.20",
+			source_ip="192.168.1.10",
+			destination_ip="192.168.1.20",
 		),
 		PortInfo(
-			source=54321,
-			destination=443,
+			source_port=54321,
+			destination_port=443,
 		),
-		ProtocolInfo(protocol="TCP"),
+		ProtocolInfo(
+			protocol_type="TCP"
+		),
 	]

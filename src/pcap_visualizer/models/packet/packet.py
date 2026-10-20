@@ -1,17 +1,17 @@
 from dataclasses import dataclass
 from datetime import datetime
 
-from pcap_visualizer.models import Layer
+from pcap_visualizer.models.layer import Layer
 
 
-@dataclass
+@dataclass()
 class Packet:
 	layer: Layer | None
 	size: int
 	timestamp: datetime
 
 	def __str__(self):
-		return f"{self.layer} ({self.size} bytes)"
+		return f"{self.layer or "Unknown"} ({self.size} bytes)"
 
 	def get_layer(self, layer_type: type[Layer]) -> Layer | None:
 

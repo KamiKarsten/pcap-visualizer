@@ -1,6 +1,8 @@
+from datetime import UTC, datetime
 from typing import ClassVar
 
 from scapy.packet import NoPayload
+from scapy.packet import Packet as ScapyPacket
 
 from pcap_visualizer.mapping import (
 	ARPMapper,
@@ -28,10 +30,10 @@ class PacketMapper:
 	]
 
 	@staticmethod
-	def map(packet) -> Packet:
+	def map(packet: ScapyPacket) -> Packet:
 		root_layer: Layer | None = None 
 		last_layer : Layer | None = None 
-		scapy_layer = packet
+		scapy_layer: ScapyPacket = packet
 
 		while not isinstance(scapy_layer, NoPayload):
 			mapped_layer = PacketMapper._map_layer(scapy_layer)
@@ -49,11 +51,14 @@ class PacketMapper:
 		return Packet(
 			layer=root_layer,
 			size=len(packet),
-			timestamp=packet.time
+			timestamp=datetime.fromtimestamp(
+				float(packet.time),
+				tz=UTC
+			)
 		)
 
 	@staticmethod
-	def _map_layer(scapy_layer) -> Layer | None:
+	def _map_layer(scapy_layer: ScapyPacket) -> Layer | None:
 		for mapper in PacketMapper.mappers:
 			mapped_layer = mapper.map(scapy_layer)
 

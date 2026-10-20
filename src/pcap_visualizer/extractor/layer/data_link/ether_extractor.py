@@ -7,7 +7,7 @@ class EtherExtractor(Extractor[MacAddressInfo]):
 	def extract(self, layer: Ethernet) -> list[MacAddressInfo]:
 		return [
 			MacAddressInfo(
-				source= layer.source_mac, 
-				destination= layer.destination_mac
+				source_mac = layer.source_mac, 
+				destination_mac = layer.destination_mac
 			)
 		]

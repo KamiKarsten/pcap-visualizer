@@ -5,9 +5,9 @@ from pcap_visualizer.models.layer.layer import Layer
 
 
 class IPv6NextHeader(IntEnum):
-	ICMPv6 = 58
 	TCP = 6
 	UDP = 17
+	ICMPv6 = 58
 
 @dataclass()
 class IPv6(Layer):

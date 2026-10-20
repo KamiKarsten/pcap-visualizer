@@ -13,5 +13,5 @@ class UDPMapper:
 		return UDP(
 			source_port=layer.sport,
 			destination_port=layer.dport, 
-			length= layer.len
+			length= layer.len or 0
 		)

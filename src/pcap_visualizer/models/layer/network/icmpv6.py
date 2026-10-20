@@ -15,7 +15,7 @@ class ICMPv6Type(IntEnum):
 	NEIGHBOR_SOLICITATION = 135
 	NEIGHBOR_ADVERTISEMENT = 136
 
-@dataclass
+@dataclass()
 class ICMPv6(Layer):
-    type: ICMPv6Type
-    code: int
+	type: ICMPv6Type
+	code: int

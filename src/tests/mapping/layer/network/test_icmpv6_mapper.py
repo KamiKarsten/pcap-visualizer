@@ -8,6 +8,7 @@ from scapy.layers.inet6 import (
 	ICMPv6ND_RA,
 	ICMPv6ND_RS,
 	ICMPv6PacketTooBig,
+	ICMPv6TimeExceeded,
 	IPv6,
 )
 
@@ -25,10 +26,11 @@ def test_map_returns_none_when_packet_has_no_icmpv6_layer():
 @pytest.mark.parametrize(
 	("scapy_type", "expected_type"),
 	[
-		(ICMPv6EchoRequest, ICMPv6Type.ECHO_REQUEST),
-		(ICMPv6EchoReply, ICMPv6Type.ECHO_REPLY),
 		(ICMPv6DestUnreach, ICMPv6Type.DESTINATION_UNREACHABLE),
 		(ICMPv6PacketTooBig, ICMPv6Type.PACKET_TOO_BIG),
+		(ICMPv6TimeExceeded, ICMPv6Type.TIME_EXCEEDED),
+		(ICMPv6EchoRequest, ICMPv6Type.ECHO_REQUEST),
+		(ICMPv6EchoReply, ICMPv6Type.ECHO_REPLY),
 		(ICMPv6ND_RS, ICMPv6Type.ROUTER_SOLICITATION),
 		(ICMPv6ND_RA, ICMPv6Type.ROUTER_ADVERTISEMENT),
 		(ICMPv6ND_NS, ICMPv6Type.NEIGHBOR_SOLICITATION),

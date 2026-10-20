@@ -7,11 +7,11 @@ class ArpExtractor(Extractor[Information]):
 	def extract(self, layer: ARP) -> list[Information]:
 		return [
 			MacAddressInfo(
-				source= layer.source_mac, 
-				destination= layer.destination_mac
+				source_mac = layer.source_mac, 
+				destination_mac = layer.destination_mac
 			), 
 			AddressInfo(
-				source=layer.source_ip,
-				destination=layer.destination_ip
+				source_ip = layer.source_ip,
+				destination_ip = layer.destination_ip
 			)
 		]

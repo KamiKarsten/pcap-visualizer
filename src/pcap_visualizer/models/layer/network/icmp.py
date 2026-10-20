@@ -9,7 +9,7 @@ class ICMPType(IntEnum):
 	ECHO_REQUEST = 8
 	ECHO_REPLY = 0
 
-@dataclass
+@dataclass()
 class ICMP(Layer):
 	type: ICMPType
 	code: int

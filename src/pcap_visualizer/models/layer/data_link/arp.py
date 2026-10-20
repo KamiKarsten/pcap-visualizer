@@ -9,7 +9,7 @@ class ARPOperation(IntEnum):
 	REPLY=2
 
 @dataclass()
-class ARP(Layer): 
+class ARP(Layer):
 	source_ip: str
 	source_mac: str
 	destination_ip: str

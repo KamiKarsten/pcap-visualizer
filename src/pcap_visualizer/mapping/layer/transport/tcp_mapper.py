@@ -11,7 +11,7 @@ class TCPMapper:
 		if not isinstance(layer, ScapyTcp):
 			return None
 
-		flags = TCPMapper._match_flags(layer.flags)
+		flags = TCPFlags(int(layer.flags) & 0x1FF)
 
 		return TCP(
 			source_port=layer.sport,
@@ -21,25 +21,3 @@ class TCPMapper:
 			flags=flags, 
 			window=layer.window 
 		)
-
-	@staticmethod
-	def _match_flags(scapyFlags) -> TCPFlags: 
-
-		result = TCPFlags(0)
-		flags = {
-			"F": TCPFlags.FIN,
-			"S": TCPFlags.SYN,
-			"R": TCPFlags.RST,
-			"P": TCPFlags.PSH,
-			"A": TCPFlags.ACK,
-			"U": TCPFlags.URG,
-			"E": TCPFlags.ECE,
-			"C": TCPFlags.CWR,
-			"N": TCPFlags.NS
-		}
-
-		for scapy_flag, flag in flags.items():
-			if scapy_flag in scapyFlags:
-				result |= flag
-
-		return result

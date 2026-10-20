@@ -1,3 +1,4 @@
+from datetime import UTC, datetime
 from unittest.mock import MagicMock, patch
 
 from scapy.layers.inet import IP
@@ -81,8 +82,9 @@ def test_map_sets_packet_size():
 	assert result.size == len(packet)
 
 def test_map_sets_packet_timestamp():
+	timestamp = datetime(2026, 10, 10, 1, 13, 35, 456789, tzinfo=UTC)
 	packet = Ether()
-	packet.time = 456.789
+	packet.time = timestamp.timestamp()
 
 	with patch.object(
 		PacketMapper,
@@ -91,4 +93,4 @@ def test_map_sets_packet_timestamp():
 	):
 		result = PacketMapper.map(packet)
 
-	assert result.timestamp == 456.789
+	assert result.timestamp == timestamp
